@@ -4,14 +4,16 @@
 </style>
 
 <template>
-  <view>个人</view>
+  <view>我的</view>
 </template>
 
 <script>
   import wepy from 'wepy';
 
   export default class Index extends wepy.page {
-    config = {};
+    config = {
+      navigationBarTitleText: '我的'
+    };
 
     components = {};
 

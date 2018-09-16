@@ -12,7 +12,7 @@
 
   export default class Index extends wepy.page {
     config = {
-      navigationBarTitleText: 'Tools'
+      navigationBarTitleText: '首页'
     };
 
     components = {};
