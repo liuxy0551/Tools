@@ -1,0 +1,38 @@
+<style scoped lang="less">
+  @import "../../styles/base";
+
+  .feedback-text {
+
+  }
+</style>
+
+<template>
+  <view>
+    <view class="feedback-text">
+      <textarea bindblur="bindTextAreaBlur" auto-height placeholder="自动变高"/>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy';
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '意见反馈'
+    };
+
+    components = {};
+
+    data = {};
+
+    computed = {};
+
+    methods = {};
+
+    onLoad() {
+
+    }
+  }
+</script>
+

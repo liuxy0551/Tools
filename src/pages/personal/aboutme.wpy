@@ -1,0 +1,31 @@
+<style scoped lang="less">
+  @import "../../styles/base";
+
+</style>
+
+<template>
+  aboutme
+</template>
+
+<script>
+  import wepy from 'wepy';
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '关于我们'
+    };
+
+    components = {};
+
+    data = {};
+
+    computed = {};
+
+    methods = {};
+
+    onLoad() {
+
+    }
+  }
+</script>
+

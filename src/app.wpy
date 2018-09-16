@@ -1,6 +1,10 @@
 <style lang="less">
+  @import "./styles/base";
   .container{
     /*border-top: 1px solid #c7c7c7;*/
+  }
+  page{
+   background-color: @lightGrey;
   }
 </style>
 
@@ -11,18 +15,20 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index/index',  //  日记首页
       'pages/personal/index', //  个人首页
+      'pages/index/index',  //  工具首页
 
-      'pages/index'
+      'pages/personal/feedback', //  意见反馈
+      'pages/personal/aboutme', //  关于我
+
+      // 'pages/index'
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
+      navigationBarBackgroundColor: '#10A25B',
       navigationBarTitleText: '谁的工具箱',
-      navigationBarTextStyle: 'black',
-      backgroundColor: '#DCDCDC'
-      // "backgroundColor": "#eeeeee"
+      navigationBarTextStyle: 'white',
+      // navigationStyle: 'custom',
     },
     tabBar: {
       color: '#10A25B',
@@ -40,18 +46,33 @@ export default class extends wepy.app {
         selectedIconPath: "images/personal_active.png"
       }]
     }
-  }
+  };
 
   globalData = {
-  }
+
+  };
 
   constructor () {
-    super()
+    super();
     this.use('requestfix');
     this.use('promisify');
   }
 
   onLaunch() {
+    // 查看是否已授权
+    wx.getSetting({
+      success: function(res){
+        console.log(res.authSetting)
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: function(res) {
+              console.log(res.userInfo)
+              //用户已经授权过
+            }
+          })
+        }
+      }
+    });
   }
 }
 </script>

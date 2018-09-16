@@ -1,10 +1,62 @@
 <style scoped lang="less">
-    @import "../../styles/base";
+  @import "../../styles/base";
 
+  .user-info {
+    width: 100%;
+    display: flex;
+    padding: 20rpx 30rpx;
+    border-bottom: 10rpx @lightGrey solid;
+    .user-info-botton {
+      width: 500rpx;
+      height: 80rpx;
+      line-height: 80rpx;
+    }
+    .user-info-img {
+      width: 200rpx;
+      height: 200rpx;
+    }
+    .user-info-right {
+      flex: 1;
+      .user-info-name {
+        padding: 30rpx 25rpx;
+      }
+      .user-sentence {
+        padding-left: 25rpx;
+      }
+    }
+  }
+  .row-text {
+    padding: 30rpx 50rpx;
+    background: #fff;
+    border-top: 2rpx @lightGrey solid;
+    &:last-child {
+      border-bottom: 10rpx @lightGrey solid;
+    }
+  }
 </style>
 
 <template>
-  <view>我的</view>
+  <view>
+    <view class="user-info b-color">
+      <button class="user-info-botton" plain="true" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" hidden="true">授权登录</button>
+      <view wx:if="{{!canIUse}}">请升级微信版本</view>
+
+      <view class="user-info-img">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="user-info-right">
+        <view class="user-info-name">
+          <open-data type="userNickName"></open-data>
+        </view>
+        <view class="user-sentence ft-26 hexColor">体会生活，体会技术</view>
+      </view>
+    </view>
+
+    <view class="row-text" @tap="toPage('feedback')">给点建议</view>
+    <view class="row-text" @tap="toPage('aboutme')">关于我们</view>
+
+
+  </view>
 </template>
 
 <script>
@@ -17,11 +69,31 @@
 
     components = {};
 
-    data = {};
+    data = {
+      //判断小程序的API，回调，参数，组件等是否在当前版本可用。
+      canIUse: wx.canIUse('button.open-type.getUserInfo')
+    };
 
     computed = {};
 
-    methods = {};
+    methods = {
+      // 获取用户信息
+      bindGetUserInfo: function(e) {
+        console.log(e.detail.userInfo)
+        if (e.detail.userInfo){
+          //用户按了允许授权按钮
+        } else {
+          //用户按了拒绝按钮
+        }
+      },
+      // 跳转页面
+      toPage(page) {
+        wx.navigateTo({
+          url: page
+        })
+      },
+
+    };
 
     onLoad() {
 
