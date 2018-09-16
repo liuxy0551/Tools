@@ -3,38 +3,30 @@
 </style>
 <template>
   <view class="container">
-
+    个人
   </view>
 </template>
 
 <script>
-  import wepy from 'wepy'
+  import wepy from 'wepy';
 
   export default class Index extends wepy.page {
     config = {
-      navigationBarTitleText: 'Fliqlo'
-    }
-    components = {
+      navigationBarTitleText: 'Tools'
+    };
+    components = {};
 
-    }
-
-    data = {
-
-    }
+    data = {};
 
     computed = {
-      now () {
-        return +new Date()
+      now() {
+        return +new Date();
       }
-    }
+    };
 
-    methods = {
+    methods = {};
 
-    }
-
-    events = {
-
-    }
+    events = {};
 
     onLoad() {
 

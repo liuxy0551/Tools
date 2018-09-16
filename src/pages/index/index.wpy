@@ -1,0 +1,43 @@
+<style lang="less">
+
+</style>
+<template>
+  <view class="container">
+    首页
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'Tools'
+    };
+    components = {
+
+    };
+
+    data = {
+
+    };
+
+    computed = {
+      now () {
+        return +new Date()
+      }
+    };
+
+    methods = {
+
+    };
+
+    events = {
+
+    };
+
+    onLoad() {
+
+    }
+  }
+</script>

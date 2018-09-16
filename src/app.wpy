@@ -9,20 +9,34 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index'
+      'pages/index/index',
+      'pages/personal/index'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarTitleText: '谁的工具箱',
+      navigationBarTextStyle: 'black',
+      backgroundColor: '#DCDCDC'
+      // navigationStyle: 'custom'
+    },
+    "tabBar": {
+      "color": "black",
+      "selectedColor": "#10A25B",
+      "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      }, {
+        "pagePath": "pages/personal/index",
+        "text": "个人"
+      }]
     }
-  }
+  };
 
   constructor () {
-    super()
-    this.use('requestfix')
-    this.use('promisify')
+    super();
+    this.use('requestfix');
+    this.use('promisify');
   }
 
   onLaunch() {
