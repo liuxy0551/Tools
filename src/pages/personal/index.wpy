@@ -4,7 +4,7 @@
 </style>
 
 <template>
-  个人
+  <view>个人</view>
 </template>
 
 <script>
