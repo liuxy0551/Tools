@@ -1,5 +1,7 @@
 <style lang="less">
-
+  .container{
+    /*border-top: 1px solid #c7c7c7;*/
+  }
 </style>
 
 <script>
@@ -9,38 +11,46 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index/index',
-      'pages/personal/index'
+      'pages/index/index',  //  日记首页
+      'pages/personal/index', //  个人首页
+
+      'pages/index'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: '谁的工具箱',
+      navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black',
       backgroundColor: '#DCDCDC'
-      // navigationStyle: 'custom'
     },
-    "tabBar": {
-      "color": "black",
-      "selectedColor": "#10A25B",
-      "list": [{
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      }, {
-        "pagePath": "pages/personal/index",
-        "text": "个人"
+    tabBar: {
+      color: '#10A25B',
+      selectedColor: '#10A25B',
+      backgroundColor: '#ffffff',
+      list: [{
+        pagePath: "pages/index/index",
+        text: "首页",
+        iconPath: "images/personal.png",
+        selectedIconPath: "images/personal_active.png"
+      },{
+        pagePath: "pages/personal/index",
+        text: "个人",
+        iconPath: "images/personal.png",
+        selectedIconPath: "images/personal_active.png"
       }]
     }
-  };
+  }
+
+  globalData = {
+  }
 
   constructor () {
-    super();
+    super()
     this.use('requestfix');
     this.use('promisify');
   }
 
   onLaunch() {
-
   }
 }
 </script>

@@ -1,35 +1,29 @@
-<style lang="less">
+<style scoped lang="less">
+    @import "../../styles/base";
 
 </style>
+
 <template>
-  <view class="container">
-    个人
-  </view>
+  个人
 </template>
 
 <script>
   import wepy from 'wepy';
 
   export default class Index extends wepy.page {
-    config = {
-      navigationBarTitleText: 'Tools'
-    };
+    config = {};
+
     components = {};
 
     data = {};
 
-    computed = {
-      now() {
-        return +new Date();
-      }
-    };
+    computed = {};
 
     methods = {};
-
-    events = {};
 
     onLoad() {
 
     }
   }
 </script>
+
