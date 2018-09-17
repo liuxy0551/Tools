@@ -2,11 +2,13 @@
   @import "../../styles/base";
 
   .logo-box {
-    width: 90%;
-    margin: 5% 5% 0 5%;
+    width: 92%;
+    margin: 5% 4% 0 4%;
     text-align: center;
     align-items: center;
+    border-radius: 20rpx;
     background: #ffffff;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     padding: 50rpx 0;
     .logo-img {
       width: 300rpx;
@@ -19,9 +21,11 @@
     }
   }
   .row-box {
-    width: 90%;
-    margin: 2% 5% 0 5%;
+    width: 92%;
+    margin: 3% 4% 0 4%;
+    border-radius: 20rpx;
     background: #ffffff;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     .row-title {
       text-align: center;
       padding: 30rpx 0;
