@@ -1,10 +1,70 @@
 <style scoped lang="less">
   @import "../../styles/base";
 
+  .logo-box {
+    width: 90%;
+    margin: 5% 5% 0 5%;
+    text-align: center;
+    align-items: center;
+    background: #ffffff;
+    padding: 50rpx 0;
+    .logo-img {
+      width: 300rpx;
+      height: 300rpx;
+    }
+    .logo-title {
+      color: #000000;
+      font-size: 30rpx;
+      line-height: 60rpx;
+    }
+  }
+  .row-box {
+    width: 90%;
+    margin: 2% 5% 0 5%;
+    background: #ffffff;
+    .row-title {
+      text-align: center;
+      padding: 30rpx 0;
+      font-size: 30rpx;
+    }
+    .row-text {
+      color: @darkGray;
+      font-size: 26rpx;
+      line-height: 40rpx;
+      padding: 10rpx 40rpx 16rpx 40rpx;
+      &.back {
+        text-indent: 54rpx;
+      }
+      &:last-child {
+        padding-bottom: 40rpx;
+      }
+    }
+  }
 </style>
 
 <template>
-  aboutme
+  <view>
+    <view class="logo-box">
+      <image class="logo-img" src="../../images/share.jpg"></image>
+      <view class="grayColor">V 1.0.0</view>
+      <view class="logo-title">谁的工具箱</view>
+      <view class="grayColor">一款常用小工具的集合</view>
+    </view>
+
+    <view class="row-box">
+      <view class="row-title">关于 谁的工具箱</view>
+      <view class="row-text back">
+        做工具箱这个小程序是一时的念头，谁的工具箱这个名字也是随意之举，里面的功能都是自己觉得用
+        起来还有点乐趣的，就加入到了首页中。提供给大家和自己在需要的时候使用。
+      </view>
+    </view>
+
+    <view class="row-box">
+      <view class="row-title">关于作者</view>
+      <view class="row-text tc">Liuxy0551</view>
+      <view class="row-text tc">在体会生活的时候，感受技术的魅力</view>
+    </view>
+  </view>
 </template>
 
 <script>
@@ -12,7 +72,7 @@
 
   export default class Index extends wepy.page {
     config = {
-      navigationBarTitleText: '关于我们'
+      navigationBarTitleText: '关于'
     };
 
     components = {};

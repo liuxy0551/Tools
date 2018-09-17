@@ -4,7 +4,7 @@
     /*border-top: 1px solid #c7c7c7;*/
   }
   page{
-   background-color: @lightGrey;
+   background-color: @whiteSmoke;
   }
 </style>
 
@@ -16,6 +16,8 @@ export default class extends wepy.app {
   config = {
     pages: [
       'pages/personal/index', //  个人首页
+
+      // 'pages/personal/index', //  个人首页
       'pages/index/index',  //  工具首页
 
       'pages/personal/feedback', //  意见反馈

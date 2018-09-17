@@ -5,7 +5,7 @@
     width: 100%;
     display: flex;
     padding: 20rpx 30rpx;
-    border-bottom: 10rpx @lightGrey solid;
+    border-bottom: 10rpx @whiteSmoke solid;
     .user-info-botton {
       width: 500rpx;
       height: 80rpx;
@@ -26,11 +26,21 @@
     }
   }
   .row-text {
+    width: 100%;
+    display: flex;
     padding: 30rpx 50rpx;
     background: #fff;
-    border-top: 2rpx @lightGrey solid;
+    border-top: 2rpx @whiteSmoke solid;
     &:last-child {
-      border-bottom: 10rpx @lightGrey solid;
+      border-top: 10rpx @whiteSmoke solid;
+    }
+    .row-left {
+      width: 60%;
+    }
+    .row-right {
+      width: 27%;
+      color: @hexColor;
+      text-align: right;
     }
   }
 </style>
@@ -48,12 +58,19 @@
         <view class="user-info-name">
           <open-data type="userNickName"></open-data>
         </view>
-        <view class="user-sentence ft-26 hexColor">体会生活，体会技术</view>
+        <view class="user-sentence ft-26 hexColor">体会生活，感受技术</view>
       </view>
     </view>
 
-    <view class="row-text" @tap="toPage('feedback')">给点建议</view>
-    <view class="row-text" @tap="toPage('aboutme')">关于我们</view>
+    <view class="row-text" @tap="toPage('feedback')">
+      <p class="row-left">给点建议</p>
+      <p class="row-right">></p>
+    </view>
+    <view class="row-text" @tap="toPage('aboutme')">
+      <p class="row-left">关于我们</p>
+      <p class="row-right">></p>
+    </view>
+    <view class="row-text">友情链接</view>
 
 
   </view>
