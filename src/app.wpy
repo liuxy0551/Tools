@@ -20,8 +20,6 @@ export default class extends wepy.app {
 
       'pages/personal/feedback', //  意见反馈
       'pages/personal/aboutme', //  关于我
-
-      // 'pages/index'
     ],
     window: {
       backgroundTextStyle: 'light',
