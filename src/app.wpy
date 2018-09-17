@@ -15,13 +15,13 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/personal/index', //  个人首页
 
-      // 'pages/personal/index', //  个人首页
+      'pages/personal/index', //  个人首页
       'pages/index/index',  //  工具首页
 
       'pages/personal/feedback', //  意见反馈
       'pages/personal/aboutme', //  关于我
+      'pages/personal/authorize', //  设置授权
     ],
     window: {
       backgroundTextStyle: 'light',

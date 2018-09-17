@@ -70,6 +70,10 @@
       <p class="row-left">关于我们</p>
       <p class="row-right">></p>
     </view>
+    <view class="row-text" @tap="toPage('authorize')">
+      <p class="row-left">设置授权</p>
+      <p class="row-right">></p>
+    </view>
     <view class="row-text">友情链接</view>
 
 

@@ -1,0 +1,29 @@
+<style scoped lang="less">
+    @import "../../styles/base";
+
+</style>
+
+<template>
+
+</template>
+
+<script>
+  import wepy from 'wepy';
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '设置授权'
+    };
+
+    components = {};
+
+    data = {};
+    computed = {};
+
+    methods = {};
+
+    onLoad() {
+
+    }
+  }
+</script>
