@@ -1,5 +1,5 @@
 <style scoped lang="less">
-    @import "../../styles/base";
+  @import "../../styles/base";
 
 </style>
 
@@ -20,10 +20,20 @@
     data = {};
     computed = {};
 
-    methods = {};
+    methods = {
+
+    };
 
     onLoad() {
-
+      // 获取用户已经授权的项目
+      wx.getSetting({
+        success(res) {
+          console.log(res);
+        },
+        complete(res) {
+          // console.log(res);
+        }
+      })
     }
   }
 </script>

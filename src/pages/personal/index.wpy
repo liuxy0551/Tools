@@ -12,8 +12,8 @@
       line-height: 80rpx;
     }
     .user-info-img {
-      width: 200rpx;
-      height: 200rpx;
+      width: 180rpx;
+      height: 180rpx;
     }
     .user-info-right {
       flex: 1;
