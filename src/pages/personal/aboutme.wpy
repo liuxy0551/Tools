@@ -37,7 +37,7 @@
       line-height: 40rpx;
       padding: 10rpx 40rpx 16rpx 40rpx;
       &.back {
-        text-indent: 54rpx;
+        text-indent: 50rpx;
       }
       &:last-child {
         padding-bottom: 40rpx;
@@ -58,8 +58,7 @@
     <view class="row-box">
       <view class="row-title">关于 谁的工具箱</view>
       <view class="row-text back">
-        做工具箱这个小程序是一时的念头，谁的工具箱这个名字也是随意之举，里面的功能都是自己觉得用
-        起来还有点乐趣的，就加入到了首页中。提供给大家和自己在需要的时候使用。
+        做工具箱这个小程序是一时的念头，谁的工具箱这个名字也是随意之举，里面的功能是自己觉得有些乐趣的，就加入到了首页当中。提供给大家和自己在需要的时候使用。
       </view>
     </view>
 
