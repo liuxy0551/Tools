@@ -1,16 +1,53 @@
 <style scoped lang="less">
   @import "../../styles/base";
 
-  .feedback-text {
-
+  .feedback-box {
+    padding: 40rpx;
+    .feedback-text {
+      border-radius: 10rpx;
+      background-color: #ffffff;
+      .text-area-box {
+        padding: 40rpx 40rpx;
+        width: 590rpx;
+        height: 360rpx !important;
+        line-height: 35rpx;
+      }
+      .text-area-num {
+        font-size: 26rpx;
+        position: absolute;
+        top: 430rpx;
+        right: 60rpx;
+      }
+    }
+    .feedback-input {
+      padding: 10rpx 40rpx;
+      margin-top: 30rpx;
+      border-radius: 10rpx;
+      background-color: #ffffff;
+    }
+    .submit-btn {
+      width: 500rpx;
+      margin: 50rpx auto;
+      padding: 15rpx 0;
+      text-align: center;
+      border-radius: 10rpx;
+      letter-spacing: 20rpx;
+      color: #ffffff;
+      background-color: @tealGreen;
+    }
   }
 </style>
 
 <template>
-  <view>
+  <view class="feedback-box">
     <view class="feedback-text">
-      <textarea bindblur="bindTextAreaBlur" auto-height placeholder="自动变高"/>
+      <textarea class="text-area-box" maxlength="200" auto-height placeholder="留下你的建议呗" auto-focus="true" bindinput="bindText"/>
+      <view class="text-area-num">{{cursor}}/200</view>
     </view>
+    <view class="feedback-input">
+      <input bindinput="bindInput" placeholder="留下你的邮箱呗"/>
+    </view>
+    <view class="submit-btn" bindtap="submit">提交</view>
   </view>
 </template>
 
@@ -21,15 +58,29 @@
     config = {
       navigationBarTitleText: '意见反馈'
     };
-
     components = {};
-
-    data = {};
-
+    data = {
+      feedback: "",             // 建议
+      cursor: "0",              // 建议框输入的字数
+      contact: "",              // 联系方式 - 邮箱优先
+    };
     computed = {};
-
-    methods = {};
-
+    methods = {
+      // 当键盘输入时，触发 input 事件 - textarea
+      bindText(e) {
+        this.feedback = e.detail.value;
+        this.cursor = e.detail.cursor;
+      },
+      // 当键盘输入时，触发 input 事件 - input
+      bindInput(e) {
+        this.contact = e.detail.value;
+      },
+      // 提交建议和邮箱
+      submit() {
+        console.log(this.feedback, this.contact);
+        wx.showToast({ title: '敬请期待', icon: 'none', duration: 2000 });
+      }
+    };
     onLoad() {
 
     }
