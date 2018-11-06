@@ -9,7 +9,7 @@
     border-radius: 20rpx;
     background: #ffffff;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    padding: 50rpx 0;
+    padding: 20rpx 0 50rpx 0;
     .logo-img {
       width: 300rpx;
       height: 300rpx;
