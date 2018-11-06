@@ -68,13 +68,11 @@
       // 去对应的工具页
       toPage(e) {
         let tool = e.currentTarget.dataset.item;
-        console.log(tool);
         wx.navigateTo({ url: "../tools/" + tool.url });
       }
     };
     onLoad() {
       this.tools = tool.tools;
-      // console.log(this.tools);
     }
   }
 </script>
