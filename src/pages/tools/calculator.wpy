@@ -1,0 +1,28 @@
+<style scoped lang="less">
+  @import "../../styles/base";
+  @import "../../styles/tools";
+
+</style>
+
+<template>
+  <view class="will-text">敬请期待！</view>
+</template>
+
+<script>
+  import wepy from 'wepy';
+
+  export default class  extends wepy.page {
+    config = {
+      navigationBarTitleText: "数字计算器"
+    };
+    components = {};
+    data = {
+      name: "数字计算器",
+    };
+    computed = {};
+    methods = {};
+    onLoad() {
+
+    }
+  }
+</script>
