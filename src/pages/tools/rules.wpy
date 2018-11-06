@@ -1,10 +1,11 @@
 <style scoped lang="less">
-    @import "../../styles/base";
+  @import "../../styles/base";
+  @import "../../styles/tools";
 
 </style>
 
 <template>
-  <view>{{name}}</view>
+  <view class="will-text">敬请期待！</view>
 </template>
 
 <script>
