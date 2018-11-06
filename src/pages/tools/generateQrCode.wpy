@@ -4,16 +4,20 @@
 </style>
 
 <template>
-  <view>生成二维码</view>
+  <view>{{name}}</view>
 </template>
 
 <script>
   import wepy from 'wepy';
 
   export default class  extends wepy.page {
-    config = {};
+    config = {
+      navigationBarTitleText: "生成二维码"
+    };
     components = {};
-    data = {};
+    data = {
+      name: "生成二维码",
+    };
     computed = {};
     methods = {};
     onLoad() {

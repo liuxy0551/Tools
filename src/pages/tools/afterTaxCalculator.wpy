@@ -4,16 +4,20 @@
 </style>
 
 <template>
-  <view>税后计算器</view>
+  <view>{{name}}</view>
 </template>
 
 <script>
   import wepy from 'wepy';
 
   export default class  extends wepy.page {
-    config = {};
+    config = {
+      navigationBarTitleText: "税后计算器"
+    };
     components = {};
-    data = {};
+    data = {
+      name: "税后计算器",
+    };
     computed = {};
     methods = {};
     onLoad() {

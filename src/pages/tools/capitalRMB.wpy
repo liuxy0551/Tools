@@ -4,16 +4,20 @@
 </style>
 
 <template>
-  <view>人民币大写</view>
+  <view>{{name}}</view>
 </template>
 
 <script>
   import wepy from 'wepy';
 
   export default class  extends wepy.page {
-    config = {};
+    config = {
+      navigationBarTitleText: "人民币大写"
+    };
     components = {};
-    data = {};
+    data = {
+      name: "人民币大写",
+    };
     computed = {};
     methods = {};
     onLoad() {

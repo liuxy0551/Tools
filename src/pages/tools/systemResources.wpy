@@ -3,16 +3,20 @@
 </style>
 
 <template>
-  <view>系统资源</view>
+  <view>{{name}}</view>
 </template>
 
 <script>
   import wepy from 'wepy';
 
   export default class  extends wepy.page {
-    config = {};
+    config = {
+      navigationBarTitleText: "系统资源"
+    };
     components = {};
-    data = {};
+    data = {
+      name: "系统资源",
+    };
     computed = {};
     methods = {};
 

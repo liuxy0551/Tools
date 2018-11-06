@@ -33,7 +33,7 @@
     <view class="tool-part">
       <view class="tool-title">第一类功能</view>
       <view class="tool-box">
-        <view class="tool-item" wx:for="{{tools.one}}" wx:key="index" bindtap="toPage" data-item='{{item}}'>
+        <view class="tool-item" wx:for="{{tools.one}}" wx:key="index" bindtap="toPage" data-item="{{item}}">
           <image class="tool-icon" src="{{item.icon}}"></image>
           <view class="tool-name">{{item.name}}</view>
         </view>
@@ -42,7 +42,7 @@
     <view class="tool-part">
       <view class="tool-title">第二类功能</view>
       <view class="tool-box">
-        <view class="tool-item" wx:for="{{tools.two}}" wx:key="index">
+        <view class="tool-item" wx:for="{{tools.two}}" wx:key="index" bindtap="toPage" data-item="{{item}}">
           <image class="tool-icon" src="{{item.icon}}"></image>
           <view class="tool-name">{{item.name}}</view>
         </view>
@@ -67,7 +67,9 @@
     methods = {
       // 去对应的工具页
       toPage(e) {
-        console.log(e.currentTarget.dataset.item);
+        let tool = e.currentTarget.dataset.item;
+        console.log(tool);
+        wx.navigateTo({ url: "../tools/" + tool.url });
       }
     };
     onLoad() {

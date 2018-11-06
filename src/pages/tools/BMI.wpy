@@ -4,16 +4,20 @@
 </style>
 
 <template>
-  <view>BMI</view>
+  <view>{{name}}</view>
 </template>
 
 <script>
   import wepy from 'wepy';
 
   export default class  extends wepy.page {
-    config = {};
+    config = {
+      navigationBarTitleText: "BMI"
+    };
     components = {};
-    data = {};
+    data = {
+      name: "BMI",
+    };
     computed = {};
     methods = {};
     onLoad() {

@@ -4,16 +4,20 @@
 </style>
 
 <template>
-  <view>生命计算</view>
+  <view>{{name}}</view>
 </template>
 
 <script>
   import wepy from 'wepy';
 
   export default class  extends wepy.page {
-    config = {};
+    config = {
+      navigationBarTitleText: "生命计算"
+    };
     components = {};
-    data = {};
+    data = {
+      name:"生命计算",
+    };
     computed = {};
     methods = {};
     onLoad() {

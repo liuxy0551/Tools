@@ -4,16 +4,20 @@
 </style>
 
 <template>
-  <view>翻页时钟</view>
+  <view>{{name}}</view>
 </template>
 
 <script>
   import wepy from 'wepy';
 
   export default class  extends wepy.page {
-    config = {};
+    config = {
+      navigationBarTitleText: "翻页时钟"
+    };
     components = {};
-    data = {};
+    data = {
+      name: "翻页时钟",
+    };
     computed = {};
     methods = {};
     onLoad() {

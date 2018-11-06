@@ -15,12 +15,26 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index/index',            //  工具首页
-      'pages/personal/index',         //  个人首页
+      'pages/index/index',              // 工具首页
+      'pages/personal/index',           // 个人首页
 
-      'pages/personal/feedback',      //  意见反馈
-      'pages/personal/aboutme',       //  关于我
-      'pages/personal/authorize',     //  设置授权
+      'pages/personal/feedback',        // 意见反馈
+      'pages/personal/aboutme',         // 关于我
+      'pages/personal/authorize',       // 设置授权
+
+      'pages/tools/fliqlo',             // 翻页时钟
+      'pages/tools/systemResources',    // 系统资源
+      'pages/tools/rules',              // 尺子
+      'pages/tools/capitalRMB',         // 人民币大写
+      'pages/tools/lifeCalculation',    // 生命计算
+      'pages/tools/relative',           // 亲戚称呼计算
+
+      'pages/tools/generateQrCode',     // 生成二维码
+      'pages/tools/identifyQrCode',     // 识别二维码
+      'pages/tools/truthIsDangerous',   // 真心话大冒险
+      'pages/tools/BMI',                // BMI指数
+      'pages/tools/afterTaxCalculator', // 税后计算器
+      'pages/tools/mirror',             // 镜子
     ],
     window: {
       backgroundTextStyle: 'light',
