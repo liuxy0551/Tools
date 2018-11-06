@@ -1,30 +1,78 @@
 <style scoped lang="less">
-    @import "../../styles/base";
+  @import "../../styles/base";
+  .tools-box {
+    padding: 30rpx 40rpx;
+    .tool-part {
+      padding-bottom: 80rpx;
+      .tool-title {
+        font-size: 32rpx;
+      }
+      .tool-box {
+        display: flex;
+        flex-wrap: wrap;
+        .tool-item {
+          width: 33%;
+          text-align: center;
+          padding-top: 40rpx;
+          .tool-icon {
+            width: 70rpx;
+            height: 70rpx;
+            border-radius: 50%;
+          }
+          .tool-name {
 
+          }
+        }
+      }
+    }
+  }
 </style>
 
 <template>
-  首页
+  <view class="tools-box">
+    <view class="tool-part">
+      <view class="tool-title">第一类功能</view>
+      <view class="tool-box">
+        <view class="tool-item" wx:for="{{tools.one}}" wx:key="index" bindtap="toPage" data-item='{{item}}'>
+          <image class="tool-icon" src="{{item.icon}}"></image>
+          <view class="tool-name">{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="tool-part">
+      <view class="tool-title">第二类功能</view>
+      <view class="tool-box">
+        <view class="tool-item" wx:for="{{tools.two}}" wx:key="index">
+          <image class="tool-icon" src="{{item.icon}}"></image>
+          <view class="tool-name">{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
   import wepy from 'wepy';
+  import tool from '../../../src/common/tools';
 
   export default class Index extends wepy.page {
     config = {
       // navigationBarTitleText: '首页'
     };
-
     components = {};
-
-    data = {};
-
+    data = {
+      tools: []
+    };
     computed = {};
-
-    methods = {};
-
+    methods = {
+      // 去对应的工具页
+      toPage(e) {
+        console.log(e.currentTarget.dataset.item);
+      }
+    };
     onLoad() {
-
+      this.tools = tool.tools;
+      // console.log(this.tools);
     }
   }
 </script>

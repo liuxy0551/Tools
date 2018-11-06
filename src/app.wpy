@@ -15,24 +15,24 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/index/index',            //  工具首页
+      'pages/personal/index',         //  个人首页
 
-      'pages/personal/index', //  个人首页
-      'pages/index/index',  //  工具首页
-
-      'pages/personal/feedback', //  意见反馈
-      'pages/personal/aboutme', //  关于我
-      'pages/personal/authorize', //  设置授权
+      'pages/personal/feedback',      //  意见反馈
+      'pages/personal/aboutme',       //  关于我
+      'pages/personal/authorize',     //  设置授权
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#10A25B',
+      navigationBarBackgroundColor: '#008080',
       navigationBarTitleText: '谁的工具箱',
       navigationBarTextStyle: 'white',
       // navigationStyle: 'custom',
     },
     tabBar: {
-      color: '#10A25B',
-      selectedColor: '#10A25B',
+      // #008080 水鸭青    #10A25B 酷安绿
+      color: '#008080',
+      selectedColor: '#008080',
       backgroundColor: '#ffffff',
       list: [{
         pagePath: "pages/index/index",
@@ -62,11 +62,11 @@ export default class extends wepy.app {
     // 查看是否已授权
     wx.getSetting({
       success: function(res){
-        console.log(res.authSetting)
+        // console.log(res.authSetting);
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success: function(res) {
-              console.log(res.userInfo)
+              console.log(res.userInfo);
               //用户已经授权过
             }
           })

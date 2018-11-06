@@ -1,0 +1,23 @@
+<style scoped lang="less">
+    @import "../../styles/base";
+
+</style>
+
+<template>
+  <view>人民币大写</view>
+</template>
+
+<script>
+  import wepy from 'wepy';
+
+  export default class  extends wepy.page {
+    config = {};
+    components = {};
+    data = {};
+    computed = {};
+    methods = {};
+    onLoad() {
+
+    }
+  }
+</script>
