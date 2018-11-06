@@ -20,7 +20,7 @@
       }
     }
     .feedback-input {
-      padding: 10rpx 40rpx;
+      padding: 15rpx 40rpx;
       margin-top: 30rpx;
       border-radius: 10rpx;
       background-color: #ffffff;
@@ -41,11 +41,11 @@
 <template>
   <view class="feedback-box">
     <view class="feedback-text">
-      <textarea class="text-area-box" maxlength="200" auto-height placeholder="留下你的建议呗" auto-focus="true" bindinput="bindText"/>
+      <textarea class="text-area-box" value="{{feedback}}" maxlength="200" auto-height placeholder="留下你的建议呗" auto-focus="true" bindinput="bindText"/>
       <view class="text-area-num">{{cursor}}/200</view>
     </view>
     <view class="feedback-input">
-      <input bindinput="bindInput" placeholder="留下你的邮箱呗"/>
+      <input value="{{contact}}" bindinput="bindInput" placeholder="留下你的邮箱呗"/>
     </view>
     <view class="submit-btn" bindtap="submit">提交</view>
   </view>
@@ -79,6 +79,8 @@
       submit() {
         console.log(this.feedback, this.contact);
         wx.showToast({ title: '敬请期待', icon: 'none', duration: 2000 });
+        this.feedback = "";
+        this.contact = "";
       }
     };
     onLoad() {
