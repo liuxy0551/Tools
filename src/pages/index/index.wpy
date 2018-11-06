@@ -17,7 +17,7 @@
           .tool-icon {
             width: 70rpx;
             height: 70rpx;
-            border-radius: 50%;
+            /*border-radius: 50%;*/
           }
           .tool-name {
 
