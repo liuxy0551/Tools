@@ -77,15 +77,10 @@
     config = {
       navigationBarTitleText: '关于'
     };
-
     components = {};
-
     data = {};
-
     computed = {};
-
     methods = {};
-
     onLoad() {
 
     }

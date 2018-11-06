@@ -14,16 +14,10 @@
     config = {
       navigationBarTitleText: '设置授权'
     };
-
     components = {};
-
     data = {};
     computed = {};
-
-    methods = {
-
-    };
-
+    methods = {};
     onLoad() {
       // 获取用户已经授权的项目
       wx.getSetting({
