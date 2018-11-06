@@ -1,10 +1,47 @@
 <style scoped lang="less">
   @import "../../styles/base";
+  @import "../../styles/tools";
 
+  .auth-box {
+    .auth-title {
+      padding: 20rpx 30rpx;
+    }
+    .auth-item {
+      display: flex;
+      /*justify-content: flex-end;*/
+      justify-content: space-between;
+      padding: 15rpx 30rpx;
+      background-color: #FFFFFF;
+      .auth-text {
+        line-height: 45rpx;
+      }
+      .auth-switch {
+
+      }
+    }
+  }
 </style>
 
 <template>
-
+  <view class="auth-box">
+    <view class="auth-title">允许“谁的工具箱”使用我的</view>
+    <view class="auth-item">
+      <view class="auth-text">用户信息</view>
+      <switch class="auth-switch" checked="{{user}}" bindchange="switchChange" data-item="{{'user'}}"/>
+    </view>
+    <view class="auth-item">
+      <view class="auth-text">地理位置</view>
+      <switch class="auth-switch" checked="{{location}}" bindchange="switchChange" data-item="{{'location'}}"/>
+    </view>
+    <view class="auth-item">
+      <view class="auth-text">摄像头</view>
+      <switch class="auth-switch" checked="{{camera}}" bindchange="switchChange" data-item="{{'camera'}}"/>
+    </view>
+    <view class="auth-item">
+      <view class="auth-text">录音</view>
+      <switch class="auth-switch" checked="{{record}}" bindchange="switchChange" data-item="{{'record'}}"/>
+    </view>
+  </view>
 </template>
 
 <script>
@@ -15,14 +52,36 @@
       navigationBarTitleText: '设置授权'
     };
     components = {};
-    data = {};
+    data = {
+      user: false,            // 用户信息
+      location: false,        // 用户地理位置
+      camera: false,          // 用户摄像头
+      record: false,          // 录音
+    };
     computed = {};
-    methods = {};
+    methods = {
+      // 开关change事件
+      switchChange(e) {
+        console.log(e.currentTarget.dataset.item, e.detail.value);
+      }
+    };
     onLoad() {
       // 获取用户已经授权的项目
       wx.getSetting({
         success(res) {
-          console.log(res);
+          // console.log(res);
+          if (!res.authSetting['scope.camera']) {
+            wx.authorize({
+              scope: 'scope.camera',
+              success () {
+                // 用户已经同意小程序使用用户信息，后续调用 wx.getUserInfo 接口不会弹窗询问
+                wx.createCameraContext();
+              },
+              fail() {
+
+              }
+            });
+          }
         },
         complete(res) {
           // console.log(res);

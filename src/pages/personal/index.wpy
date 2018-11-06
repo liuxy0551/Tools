@@ -74,7 +74,7 @@
       <p class="row-left">设置授权</p>
       <p class="row-right">></p>
     </view>
-    <view class="row-text">友情链接</view>
+    <view class="row-text" @tap="toPage('friend')">友情链接</view>
 
 
   </view>
@@ -109,9 +109,11 @@
       },
       // 跳转页面
       toPage(page) {
-        wx.navigateTo({
-          url: page
-        })
+        if(page == "friend") {
+          wx.showToast({ title: '敬请期待', icon: 'none', duration: 2000 });
+        }else {
+          wx.navigateTo({ url: page });
+        }
       },
 
     };

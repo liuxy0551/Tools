@@ -80,10 +80,24 @@ export default class extends wepy.app {
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success: function(res) {
-              console.log(res.userInfo);
-              //用户已经授权过
+              console.log(res.userInfo);    //用户已经授权过
             }
-          })
+          });
+        }else {
+          // 暂未授权的提示
+          wx.showModal({
+            title: '授权提示',
+            content: '您暂未授权，部分功能将不可用，如需授权可前往 我的 -> 设置授权 进行设置',
+            cancelText: "知道了",
+            confirmText: "设置授权",
+            success (res) {
+              if (res.confirm) {
+                wx.navigateTo({ url: "../personal/authorize" });      // 去设置授权页
+              } else if (res.cancel) {
+                // console.log('用户点击取消');
+              }
+            }
+          });
         }
       }
     });
