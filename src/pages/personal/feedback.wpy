@@ -9,13 +9,13 @@
       .text-area-box {
         padding: 40rpx 40rpx;
         width: 590rpx;
-        height: 360rpx !important;
+        height: 280rpx !important;
         line-height: 35rpx;
       }
       .text-area-num {
         font-size: 26rpx;
         position: absolute;
-        top: 430rpx;
+        top: 350rpx;
         right: 60rpx;
       }
     }
@@ -41,8 +41,8 @@
 <template>
   <view class="feedback-box">
     <view class="feedback-text">
-      <textarea class="text-area-box" value="{{feedback}}" maxlength="200" auto-height placeholder="留下你的建议呗" auto-focus="true" bindinput="bindText"/>
-      <view class="text-area-num">{{cursor}}/200</view>
+      <textarea class="text-area-box" value="{{feedback}}" maxlength="160" auto-height placeholder="留下你的建议呗" auto-focus="true" bindinput="bindText"/>
+      <view class="text-area-num">{{cursor}}/160</view>
     </view>
     <view class="feedback-input">
       <input value="{{contact}}" bindinput="bindInput" placeholder="留下你的邮箱呗"/>
