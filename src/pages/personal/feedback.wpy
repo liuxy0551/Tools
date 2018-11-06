@@ -47,7 +47,8 @@
     <view class="feedback-input">
       <input value="{{contact}}" bindinput="bindInput" placeholder="留下你的邮箱呗"/>
     </view>
-    <view class="submit-btn" bindtap="submit">提交</view>
+    <view class="submit-btn" bindtap="submit">敬请期待</view>
+    <!--<view class="submit-btn" bindtap="submit">提交</view>-->
   </view>
 </template>
 
