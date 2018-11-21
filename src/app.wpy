@@ -86,7 +86,7 @@ export default class extends wepy.app {
           });
         }else {
           // 暂未授权的提示
-          wx.showModal({
+          /*wx.showModal({
             title: '授权提示',
             content: '您暂未授权，部分功能将不可用，如需授权可前往 我的 -> 设置授权 进行设置',
             cancelText: "知道了",
@@ -98,7 +98,7 @@ export default class extends wepy.app {
                 // console.log('用户点击取消');
               }
             }
-          });
+          });*/
         }
       }
     });
